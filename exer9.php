@@ -15,13 +15,8 @@
         <form method="post" action="respostaexer9.php">
 
             <div class="mb-3">
-                <label for="largura" class="form-label">largura</label>
-                <input type="number" id="largura" name="largura" class="form-control" required="">
-            </div>
-
-            <div class="mb-3">
-                <label for="altura" class="form-label">altura</label>
-                <input type="number" id="altura" name="altura" class="form-control" required="">
+                <label for="raio" class="form-label">raio</label>
+                <input type="raio" id="raio" name="raio" class="form-control" required="">
             </div>
 
             <button type="submit" class="btn btn-primary">Enviar</button>

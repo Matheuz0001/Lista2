@@ -15,20 +15,19 @@
         <?php
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             try {
-                $largura = $_POST['largura'];
-                $altura = $_POST['altura'];
+                $raio = (float) $_POST['raio'];
 
-                if ($largura <= 0 || $altura <= 0) {
-                    throw new Exception('A largura e altura devem ser valores positivos. ');
+                if ($raio <= 0) {
+                    throw new Exception('O raio deve ser um valor positivo.');
                 }
-                $area = $largura * $altura;
-                echo "A área do retângulo é: $area unidades²";
+
+                // Calcula a área do círculo (π * r²)
+                $area = pi() * pow($raio, 2);
+                echo "<h3>A área do círculo é: " . number_format($area, 2, ',', '.') . " unidades²</h3>";
             } catch (Exception $e) {
-                echo $e->getMessage();
+                echo "<p style='color: red;'>" . $e->getMessage() . "</p>";
             }
         }
-
-
         ?>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
